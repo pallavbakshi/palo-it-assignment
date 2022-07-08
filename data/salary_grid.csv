@@ -1,0 +1,11 @@
+rank,levelName,hive,baseSalary
+1,Junior,tech,18000
+2,Mid,tech,42700
+3,Senior,tech,68400
+4,Team_Lead,tech,87100
+5,Director,tech,104800
+1,Junior,design,17000
+2,Mid,design,39700
+3,Senior,design,58400
+4,Team_Lead,design,78100
+5,Director,design,96800

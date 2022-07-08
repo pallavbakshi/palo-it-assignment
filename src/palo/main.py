@@ -8,7 +8,7 @@ from palo.data_models import User
 # You cannot have duplicate badge names
 # A user can get multiple badges at the same time.
 
-LEVEL_NAMES = ["Junior", "Mid", "Senior", "Team Lead", "Director"]
+LEVEL_NAMES = ["Junior", "Mid", "Senior", "Team_Lead", "Director"]
 
 
 @click.command()
