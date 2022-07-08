@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# How to modify git hooks to not use .git/hooks but this folder
+# git config core.hooksPath scripts/bash/hooks/
+# https://stackoverflow.com/a/52382879/5576491
+
+
+
+# Restricting commits to master
+# https://stackoverflow.com/a/71480685/5576491
+branch="$(git rev-parse --abbrev-ref HEAD)"
+
+if [ "$branch" = "master" ]; then
+  echo "🛑 ✋ Master Branch commit is blocked"
+  exit 1
+fi
+
+
+make clean
+retVal=$?
+
+if [ $retVal -ne 0 ]
+  then
+    echo "Failed the clean process with exit code ${retVal}"
+    exit $retVal
+fi
+
+echo "======== Checking if any files were modified ========"
+
+git ls-files -m 2>&1 | tee _files_modified_by_clean.txt
+filesModified=$(wc -l _files_modified_by_clean.txt | grep -o "[0-9]\+")
+
+if [ "$filesModified" -ne 0 ]
+  then
+    echo "Re-staging ${filesModified} modified files ☝️"
+
+    echo "git add -u"
+    git add -u
+
+    echo "git status"
+    git status
+    exit 1
+fi
+
+echo "======== ✅ Pre-Commit Hook Successful ========"
+
+

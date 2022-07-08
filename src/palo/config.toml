@@ -1,0 +1,12 @@
+# Here you store all the configurations (NOT secrets) for your
+# project. You store secrets in ".env" file which is never
+# committed to Git.
+
+# How to read configurations from this file?
+# from importlib import resources
+# import tomllib
+# _cfg = tomllib.loads(resources.read_text("tiptoe", "config.toml"))
+# author = _cfg["project"]["author"]
+
+[project]
+author = "pallavbakshi"

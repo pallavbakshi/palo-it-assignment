@@ -1,0 +1,4 @@
+pyenv install -v 3.9.13
+pyenv virtualenv 3.9.13 palo
+pyenv local palo
+pip install pip-tools

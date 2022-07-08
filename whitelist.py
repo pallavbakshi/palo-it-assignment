@@ -1,0 +1,3 @@
+# Whitelist for vulture
+
+tests

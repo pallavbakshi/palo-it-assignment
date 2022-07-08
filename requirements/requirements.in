@@ -1,0 +1,15 @@
+pip-tools
+bumpver
+pytest
+coverage
+black
+isort
+flake8
+mypy
+vulture
+mkdocs
+mkdocs-material
+mdformat
+click
+pandas
+pydantic
